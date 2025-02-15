@@ -23,12 +23,6 @@ namespace Mission06_Stephenson.Controllers
             return View();
         }
 
-        public IActionResult MovieCollection()
-        {
-            var movies = _context.Movies.ToList(); // Get all movies from the database
-            return View(movies);
-        }
-
         public IActionResult AddMovie()
         {
             return View();
@@ -37,13 +31,9 @@ namespace Mission06_Stephenson.Controllers
         [HttpPost]
         public IActionResult AddMovie(Movie movie)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Movies.Add(movie); // Add the new movie to the database
-                _context.SaveChanges(); // Save changes to the database
-                return RedirectToAction("MovieCollection"); // Redirect to the movie list
-            }
-            return View(movie); // Show the form again if input is invalid
+            _context.Movies.Add(movie); // Add the new movie to the database
+            _context.SaveChanges(); // Save changes to the database
+            return RedirectToAction("Index");
         }
     }
 }

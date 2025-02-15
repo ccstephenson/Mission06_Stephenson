@@ -156,4 +156,4 @@
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.pdb
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.genruntimeconfig.cache
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/ref/Mission06_Stephenson.dll
-/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.csproj.CopyComplete
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission0.BE1D2152.Up2Date
