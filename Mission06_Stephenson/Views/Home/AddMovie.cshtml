@@ -1,0 +1,36 @@
+@model Mission06_Stephenson.Models.Movie
+
+<h2>Add a New Movie</h2>
+
+<form asp-action="AddMovie" method="post">
+    <label asp-for="Title"></label>
+    <input asp-for="Title" required />
+
+    <label asp-for="Category"></label>
+    <input asp-for="Category" required />
+
+    <label asp-for="Director"></label>
+    <input asp-for="Director" required />
+
+    <label asp-for="Year"></label>
+    <input asp-for="Year" type="number" required />
+
+    <label asp-for="Rating"></label>
+    <select asp-for="Rating" required>
+        <option>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+    </select>
+
+    <label asp-for="Edited">Edited</label>
+    <input asp-for="Edited" type="checkbox" value="true" />
+
+    <label asp-for="LentTo">Lent to</label>
+    <input asp-for="LentTo" />
+
+    <label asp-for="Notes"></label>
+    <input asp-for="Notes" maxlength="25" />
+
+    <button type="submit">Save</button>
+</form>

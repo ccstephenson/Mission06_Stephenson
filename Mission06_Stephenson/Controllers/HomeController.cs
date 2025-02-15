@@ -1,31 +1,49 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Mission06_Stephenson.Models;
+using System.Linq;
 
-namespace Mission06_Stephenson.Controllers;
-
-public class HomeController : Controller
+namespace Mission06_Stephenson.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly MoviesContext _context;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(MoviesContext context)
+        {
+            _context = context;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult MovieCollection()
+        {
+            var movies = _context.Movies.ToList(); // Get all movies from the database
+            return View(movies);
+        }
+
+        public IActionResult AddMovie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMovie(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(movie); // Add the new movie to the database
+                _context.SaveChanges(); // Save changes to the database
+                return RedirectToAction("MovieCollection"); // Redirect to the movie list
+            }
+            return View(movie); // Show the form again if input is invalid
+        }
     }
 }
