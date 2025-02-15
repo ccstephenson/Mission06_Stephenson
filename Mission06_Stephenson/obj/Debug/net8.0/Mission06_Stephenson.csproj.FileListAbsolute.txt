@@ -1,0 +1,8 @@
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.csproj.AssemblyReference.cache
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.GeneratedMSBuildEditorConfig.editorconfig
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.AssemblyInfoInputs.cache
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.AssemblyInfo.cs
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.csproj.CoreCompileInputs.cache
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.MvcApplicationPartsAssemblyInfo.cache
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.RazorAssemblyInfo.cache
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.RazorAssemblyInfo.cs
