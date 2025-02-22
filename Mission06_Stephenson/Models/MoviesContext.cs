@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Mission07_Stephenson.Models;
 
 namespace Mission06_Stephenson.Models
 {

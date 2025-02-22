@@ -26,7 +26,7 @@ namespace Mission06_Stephenson.Controllers
 
         public IActionResult AddMovie()
         {
-            return View();
+            return View("Movie");
         }
 
         [HttpPost]
@@ -45,36 +45,63 @@ namespace Mission06_Stephenson.Controllers
 
         public IActionResult EditMovie(int id)
         {
-            var movie = _context.Movies.FirstOrDefault(m => m.MovieId == id);
+            var movie = _context.Movies
+                .Include(m => m.Category)  // Include the related Category
+                .FirstOrDefault(m => m.MovieId == id);
+
             if (movie == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            // Pass all categories to the view for the dropdown
+            ViewBag.Categories = _context.Categories.ToList();
 
+            return View(movie);
         }
+        
         [HttpPost]
         public IActionResult EditMovie(Movie movie)
         {
-            _context.Movies.Update(movie);
-            _context.SaveChanges();
-            return RedirectToAction("MovieCollection");
-        }
-        
-        public IActionResult DeleteMovie(int id)
-        {
-            var movie = _context.Movies.FirstOrDefault(m => m.MovieId == id);
-            if (movie == null)
+            // Convert StringValues to a regular string using camelCase
+            var categoryName = Request.Form["CategoryName"].ToString();
+
+            var existingMovie = _context.Movies
+                .FirstOrDefault(m => m.MovieId == movie.MovieId);
+
+            if (existingMovie == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            // Find or create the category by name
+            var category = _context.Categories.FirstOrDefault(c => c.CategoryName == categoryName);
+            if (category == null)
+            {
+                category = new Category { CategoryName = categoryName };
+                _context.Categories.Add(category);
+                _context.SaveChanges();
+            }
+
+            // Update movie properties
+            existingMovie.Title = movie.Title;
+            existingMovie.Director = movie.Director;
+            existingMovie.Year = movie.Year;
+            existingMovie.Rating = movie.Rating;
+            existingMovie.Edited = movie.Edited;
+            existingMovie.CopiedToPlex = movie.CopiedToPlex;
+            existingMovie.Notes = movie.Notes;
+            existingMovie.CategoryId = category.CategoryId;
+
+            // Save changes to the database
+            _context.SaveChanges();
+
+            // Redirect after saving
+            return RedirectToAction("MovieCollection", "Home");
         }
         
-        [HttpPost, ActionName("DeleteMovie")]
-        public IActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public IActionResult DeleteMovie(int id)
         {
             var movie = _context.Movies.FirstOrDefault(m => m.MovieId == id);
             if (movie == null)
@@ -84,8 +111,10 @@ namespace Mission06_Stephenson.Controllers
 
             _context.Movies.Remove(movie);
             _context.SaveChanges();
-            return RedirectToAction("MovieCollection");
-        }
 
+            // Redirect back to the Movie Collection after deletion
+            return RedirectToAction("MovieCollection", "Home");
+        }
+        
     }
 }

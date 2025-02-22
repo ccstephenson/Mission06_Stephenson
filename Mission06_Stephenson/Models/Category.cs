@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Mission06_Stephenson.Models;
 
-namespace Mission07_Stephenson.Models
+namespace Mission06_Stephenson.Models
 {
     public class Category
     {

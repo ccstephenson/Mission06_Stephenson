@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Mission07_Stephenson.Models;
+using Mission06_Stephenson.Models;
 
 namespace Mission06_Stephenson.Models
 {
@@ -29,8 +29,9 @@ namespace Mission06_Stephenson.Models
         
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        
+
         public Category Category { get; set; }
+
         
     }
 }
