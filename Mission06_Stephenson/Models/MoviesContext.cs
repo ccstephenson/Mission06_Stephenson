@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Mission07_Stephenson.Models;
 
 namespace Mission06_Stephenson.Models
 {
@@ -10,6 +11,7 @@ namespace Mission06_Stephenson.Models
         }
         
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
 

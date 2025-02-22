@@ -157,3 +157,7 @@
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission06_Stephenson.genruntimeconfig.cache
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/ref/Mission06_Stephenson.dll
 /Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/Mission0.BE1D2152.Up2Date
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/bin/Debug/net8.0/Mission06_Stephenson.staticwebassets.endpoints.json
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/bin/Debug/net8.0/Database/MoviesNew.sqlite
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/Users/calebstephenson/RiderProjects/Mission06_Stephenson/Mission06_Stephenson/obj/Debug/net8.0/staticwebassets/msbuild.Mission06_Stephenson.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
